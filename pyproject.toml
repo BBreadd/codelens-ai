@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.backends.legacy:build"
+
+[project]
+name = "codelens-ai"
+version = "0.1.0"
+description = "AI-powered code analysis CLI"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "anthropic>=0.28.0",
+    "openai>=1.30.0",
+    "rich>=13.7.0",
+    "click>=8.1.7",
+    "python-dotenv>=1.0.1",
+]
+
+[project.scripts]
+codelens = "codelens.cli:main"
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "N", "UP", "RUF"]
